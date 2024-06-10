@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.dagger.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -66,4 +69,32 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // New compose navigation
+    implementation(libs.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
+    // dagger hilt
+    implementation(libs.hilt.implementation)
+    kapt(libs.kapt.dagger.hilt.compiler)
+    kapt(libs.kapt.hilt.compiler)
+
+    // location services
+    implementation(libs.play.services.location)
+
+    // retrofit + viewmodel compose
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+
+    implementation(libs.viewmodel.compose)
+
+    // coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+    implementation(libs.coroutines.lifecycle.viewmodel.ktx)
+    implementation(libs.coroutines.lifecycle.runtime.ktx)
+
 }

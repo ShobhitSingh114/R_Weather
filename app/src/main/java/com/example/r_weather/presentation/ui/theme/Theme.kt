@@ -1,6 +1,5 @@
-package com.example.r_weather.ui.theme
+package com.example.r_weather.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
